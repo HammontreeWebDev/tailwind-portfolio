@@ -1,6 +1,6 @@
 'use client'
 
-export default function HeroImage() {
+export default function HeroImage({ title, subText, buttonText, image1, image2, image3, image4, image5 }) {
     return (
         <div>
             <main>
@@ -46,17 +46,17 @@ export default function HeroImage() {
                             <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                                 <div className="relative w-full lg:max-w-xl lg:shrink-0 xl:max-w-2xl">
                                     <h1 className={'title-text text-pretty text-5xl font-semibold tracking-tight sm:text-7xl'}>
-                                        Transforming Visions Into Digital Reality
+                                        {title}
                                     </h1>
                                     <p className={'mt-8 text-pretty text-lg font-medium sm:max-w-md sm:text-xl/8 lg:max-w-none'}>
-                                    From dynamic, full-scale applications to professional front-end websites, Hammontree Full-Stack Solutions is here to bring your ideas to life.
+                                        {subText}
                                     </p>
                                     <div className="mt-10 flex items-center gap-x-6">
                                         <a
                                             href="#"
                                             className="rounded-md bg-[var(--primary5)] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[var(--primary4)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                                         >
-                                            Get started
+                                            {buttonText}
                                         </a>
                                     </div>
                                 </div>
@@ -65,7 +65,7 @@ export default function HeroImage() {
                                         <div className="relative">
                                             <img
                                                 alt=""
-                                                src="/img/heroImage/brofit.png"
+                                                src={image1}
                                                 className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                                             />
                                             <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
@@ -75,7 +75,7 @@ export default function HeroImage() {
                                         <div className="relative">
                                             <img
                                                 alt=""
-                                                src="/img/heroImage/jesse.png"
+                                                src={image2}
                                                 className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                                             />
                                             <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
@@ -83,7 +83,7 @@ export default function HeroImage() {
                                         <div className="relative">
                                             <img
                                                 alt=""
-                                                src="/img/heroImage/toBeWith.png"
+                                                src={image3}
                                                 className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                                             />
                                             <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
@@ -93,7 +93,7 @@ export default function HeroImage() {
                                         <div className="relative">
                                             <img
                                                 alt=""
-                                                src="/img/heroImage/outtaTouch.png"
+                                                src={image4}
                                                 className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                                             />
                                             <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
@@ -101,7 +101,7 @@ export default function HeroImage() {
                                         <div className="relative">
                                             <img
                                                 alt=""
-                                                src="/img/heroImage/pokewire.png"
+                                                src={image5}
                                                 className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                                             />
                                             <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />

@@ -21,7 +21,7 @@ export default function Header() {
             <span className="sr-only">Hammontree Full-Stack Solutions</span>
               <img
                 alt=""
-                src="/img/heroImage/hfs-icon.png"
+                src="/img/nav/hfs-icon.png"
                 className="h-8 w-auto"
               />
           </a>
@@ -53,7 +53,7 @@ export default function Header() {
               <span className="sr-only">Hammontree Full-Stack Solutions</span>
               <img
                 alt=""
-                src="/img/heroImage/hfs-icon.png"
+                src="/img/nav/hfs-icon.png"
                 className="h-8 w-auto"
               />
             </a>
