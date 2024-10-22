@@ -11,6 +11,7 @@ export default function Home() {
     image3={"/img/home/outtaTouch.png"}
     image4={"/img/home/pokewire.png"}
     image5={"/img/home/toBeWith.png"}
+    btnHref={"/contact"}
     />
   );
 }

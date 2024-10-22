@@ -1,6 +1,6 @@
 'use client'
 
-export default function HeroImage({ title, subText, buttonText, image1, image2, image3, image4, image5 }) {
+export default function HeroImage({ title, subText, buttonText, image1, image2, image3, image4, image5, btnHref }) {
     return (
         <div>
             <main>
@@ -53,7 +53,7 @@ export default function HeroImage({ title, subText, buttonText, image1, image2, 
                                     </p>
                                     <div className="mt-10 flex items-center gap-x-6">
                                         <a
-                                            href="#"
+                                            href={btnHref}
                                             className="rounded-md bg-[var(--primary5)] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[var(--primary4)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                                         >
                                             {buttonText}
