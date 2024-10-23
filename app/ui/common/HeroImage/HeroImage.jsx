@@ -38,14 +38,14 @@ export default function HeroImage({ title, subText, buttonText, image1, image2, 
                                 clipPath:
                                     'polygon(63.1% 29.5%, 100% 17.1%, 76.6% 3%, 48.4% 0%, 44.6% 4.7%, 54.5% 25.3%, 59.8% 49%, 55.2% 57.8%, 44.4% 57.2%, 27.8% 47.9%, 35.1% 81.5%, 0% 97.7%, 39.2% 100%, 35.2% 81.4%, 97.2% 52.8%, 63.1% 29.5%)',
                             }}
-                            className="aspect-[801/1036] w-[50.0625rem] bg-gradient-to-tr from-[#7A3FFC] to-[#B83FFC] opacity-90"
+                            className="aspect-[801/1036] w-[50.0625rem] bg-gradient-to-tr from-[#7A3FFC] to-[#B83FFC] opacity-50"
                         />
                     </div>
                     <div className="overflow-hidden">
                         <div className="mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
                             <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                                 <div className="relative w-full lg:max-w-xl lg:shrink-0 xl:max-w-2xl">
-                                    <h1 className={'title-text text-pretty text-5xl font-semibold tracking-tight sm:text-7xl'}>
+                                    <h1 className={'title-text text-[var(--primary2)] text-pretty text-5xl font-semibold tracking-tight sm:text-7xl'}>
                                         {title}
                                     </h1>
                                     <p className={'mt-8 text-pretty text-lg font-medium sm:max-w-md sm:text-xl/8 lg:max-w-none'}>

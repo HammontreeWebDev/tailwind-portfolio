@@ -3,7 +3,7 @@ export default function CenteredCard({ title, line1, line2, btnText, url }) {
         <div className="py-16 sm:py-24">
             <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div className="flex flex-col items-center relative isolate overflow-hidden bg-[var(--p4-25)] px-6 py-24 shadow-2xl sm:rounded-3xl sm:px-24 xl:py-32">
-                    <h2 className="title-text mx-auto max-w-3xl text-center text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+                    <h2 className="title-text text-[var(--primary2)] mx-auto max-w-3xl text-center text-4xl font-semibold tracking-tight sm:text-5xl">
                         { title }
                     </h2>
                     <p className="mx-auto my-6 max-w-lg text-center text-lg text-white">
