@@ -4,7 +4,7 @@ import Image from 'next/image';
 export default function Modal({ title, content, leftButton, rightButton, onClose, imagesrc, imagealt, href }) {
     return (
         <Dialog open={true} onClose={onClose} className="relative z-10">
-            <div className="fixed inset-0 bg-[var(--alt4)] bg-opacity-75" />
+            <div className="fixed inset-0 bg-[var(--p4-50)] bg-opacity-75" />
 
             <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
                 <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">

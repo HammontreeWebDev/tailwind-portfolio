@@ -36,7 +36,7 @@ export default function TechStack() {
     };
 
     return (
-        <div className="bg-[var(--primary4)] py-24 sm:py-32">
+        <div className="bg-[var(--p4-25)] py-24 sm:py-32">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <h2 className="title-text text-center text-lg font-semibold leading-8 text-white">
                     Your next project could be built using...

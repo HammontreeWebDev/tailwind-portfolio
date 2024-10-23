@@ -18,6 +18,10 @@
   --alt3: #7D5E6C;
   --alt4: #675E7D;
   --alt5: #7D5F5E;
+
+  /* trans colors */
+  --p4-25: rgba(122, 63, 252, 0.25);
+  --p4-50: rgba(122, 63, 252, 0.50);
 }
 
 @media (prefers-color-scheme: dark) {
