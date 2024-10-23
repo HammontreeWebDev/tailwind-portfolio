@@ -42,35 +42,13 @@ export default function ContactForm() {
                             </div>
                         </div>
                         <h2 className=" title-text text-pretty text-4xl font-semibold tracking-tight text-[var(--primary2)] sm:text-5xl">General Inquiries</h2>
-                        <p className="mt-6 text-lg leading-8 text-gray-300">
+                        <p className="mt-6 text-lg leading-8 text-white">
                             If you have general questions for me, feel free to use this form to send me an email.
                             <br/>
                             <br/>
                             Please allow 24-72 business hours while waiting for a response.
                         </p>
-                        <dl className="mt-10 space-y-4 text-base leading-7 text-gray-300">
-                            <div className="flex gap-x-4">
-                                <dt className="flex-none">
-                                    <span className="sr-only">Address</span>
-                                    <BuildingOffice2Icon aria-hidden="true" className="h-7 w-6 text-gray-400" />
-                                </dt>
-                                <dd>
-                                    545 Mavis Island
-                                    <br />
-                                    Chicago, IL 99191
-                                </dd>
-                            </div>
-                            <div className="flex gap-x-4">
-                                <dt className="flex-none">
-                                    <span className="sr-only">Telephone</span>
-                                    <PhoneIcon aria-hidden="true" className="h-7 w-6 text-gray-400" />
-                                </dt>
-                                <dd>
-                                    <a href="tel:+1 (555) 234-5678" className="hover:text-white">
-                                        +1 (555) 234-5678
-                                    </a>
-                                </dd>
-                            </div>
+                        <dl className="mt-10 space-y-4 text-base leading-7 text-white">
                             <div className="flex gap-x-4">
                                 <dt className="flex-none">
                                     <span className="sr-only">Email</span>
@@ -78,7 +56,7 @@ export default function ContactForm() {
                                 </dt>
                                 <dd>
                                     <a href="mailto:hello@example.com" className="hover:text-white">
-                                        hello@example.com
+                                        kaileb@hammontreefullstacksolutions.com
                                     </a>
                                 </dd>
                             </div>
@@ -162,7 +140,7 @@ export default function ContactForm() {
                         <div className="mt-8 flex justify-end">
                             <button
                                 type="submit"
-                                className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+                                className="rounded-md bg-[var(--primary5)] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-white hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
                             >
                                 Send message
                             </button>
