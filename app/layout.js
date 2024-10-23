@@ -5,7 +5,7 @@ import "./globals.css";
 // import fonts from next/font/google to avoid making requests from google
 import { Architects_Daughter } from 'next/font/google';
 import { Josefin_Sans } from "next/font/google";
-import Header from "./ui/header/Header";
+import Header from "./ui/Header/Header";
 
 // store fonts in a variable and specify parameters
 const architectsDaughter = Architects_Daughter({

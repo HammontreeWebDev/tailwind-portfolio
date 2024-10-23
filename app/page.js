@@ -1,5 +1,6 @@
-import HeroImage from "./ui/heroImage/HeroImage";
-import Testimonial from "./ui/testimonial/Testimonial";
+import HeroImage from "./ui/HeroImage/HeroImage";
+import Testimonial from "./ui/Testimonial/Testimonial";
+import TechStack from "./ui/TechStack/TechStack";
 
 export default function Home() {
   return (
@@ -23,6 +24,8 @@ export default function Home() {
         occupation={"Owner of BroFit Training"}
         picture={"/img/home/brofitLogo.webp"}
       />
+
+      <TechStack />
 
     </>
   );
