@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Modal from "../Modal/Modal";
+import Modal from "../common/Modal/Modal";
 import { useState } from "react";
 
 export default function TechStack() {
