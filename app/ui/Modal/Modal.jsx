@@ -1,7 +1,7 @@
 import { Dialog } from '@headlessui/react';
 import Image from 'next/image';
 
-export default function Modal({ title, content, leftButton, rightButton, onClose, imagesrc, imagealt }) {
+export default function Modal({ title, content, leftButton, rightButton, onClose, imagesrc, imagealt, href }) {
     return (
         <Dialog open={true} onClose={onClose} className="relative z-10">
             <div className="fixed inset-0 bg-[var(--alt4)] bg-opacity-75" />
@@ -35,13 +35,12 @@ export default function Modal({ title, content, leftButton, rightButton, onClose
                             >
                                 {leftButton}
                             </button>
-                            <button
-                                type="button"
-                                onClick={onClose}
+                            <a
                                 className="mt-3 inline-flex w-full justify-center rounded-md bg-[var(--primary5)] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-[var(--primary4)]"
+                                href={href}
                             >
                                 {rightButton}
-                            </button>
+                            </a>
                         </div>
                     </Dialog.Panel>
                 </div>

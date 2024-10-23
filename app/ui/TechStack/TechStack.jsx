@@ -10,21 +10,21 @@ export default function TechStack() {
 
     // Array of tech stack data for simplicity
     const techStack = [
-        { name: "Apollo", src: "/img/techStack/Apollo.svg" },
-        { name: "CSS3", src: "/img/techStack/css3.svg" },
-        { name: "ExpressJS", src: "/img/techStack/ExpressJS.svg" },
-        { name: "Figma", src: "/img/techStack/figma.svg" },
-        { name: "Github Pages", src: "/img/techStack/ghPages.svg" },
-        { name: "GraphQL", src: "/img/techStack/GraphQL.svg" },
-        { name: "HTML5", src: "/img/techStack/html5.svg" },
-        { name: "JavaScript", src: "/img/techStack/javascript.svg" },
-        { name: "jQuery", src: "/img/techStack/jQuery.svg" },
-        { name: "MongoDB", src: "/img/techStack/MongoDB.svg" },
-        { name: "mySQL", src: "/img/techStack/mySQL.svg" },
-        { name: "NodeJS", src: "/img/techStack/NodeJS.svg" },
-        { name: "ReactJS", src: "/img/techStack/ReactJS.svg" },
-        { name: "SQL", src: "/img/techStack/sql.svg" },
-        { name: "Vercel", src: "/img/techStack/vercel.svg" },
+        { name: "Apollo", src: "/img/techStack/Apollo.svg", href: "https://www.apollographql.com/docs/apollo-server" },
+        { name: "CSS3", src: "/img/techStack/css3.svg", href: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+        { name: "ExpressJS", src: "/img/techStack/ExpressJS.svg", href: "https://expressjs.com/" },
+        { name: "Figma", src: "/img/techStack/figma.svg", href: "https://www.figma.com/" },
+        { name: "Github Pages", src: "/img/techStack/ghPages.svg", href: "https://pages.github.com/" },
+        { name: "GraphQL", src: "/img/techStack/GraphQL.svg", href: "https://graphql.org/" },
+        { name: "HTML5", src: "/img/techStack/html5.svg", href: "https://developer.mozilla.org/en-US/docs/Glossary/HTML5" },
+        { name: "JavaScript", src: "/img/techStack/javascript.svg", href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+        { name: "jQuery", src: "/img/techStack/jQuery.svg", href: "https://jquery.com/" },
+        { name: "MongoDB", src: "/img/techStack/MongoDB.svg", href: "https://www.mongodb.com/" },
+        { name: "mySQL", src: "/img/techStack/mySQL.svg", href: "https://www.mysql.com/" },
+        { name: "NodeJS", src: "/img/techStack/NodeJS.svg", href: "https://nodejs.org/en" },
+        { name: "ReactJS", src: "/img/techStack/ReactJS.svg", href: "https://react.dev/" },
+        { name: "SQL", src: "/img/techStack/sql.svg", href: "https://www.w3schools.com/sql/" },
+        { name: "Vercel", src: "/img/techStack/vercel.svg", href: "https://vercel.com" },
     ];
 
     const handleModalOpen = (index) => {
@@ -67,6 +67,7 @@ export default function TechStack() {
                                     onClose={handleModalClose} // Close the modal when either button is clicked
                                     imagesrc={tech.src}
                                     imagealt={tech.name}
+                                    href={tech.href}
                                 />
                             )}
                         </div>
