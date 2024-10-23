@@ -6,6 +6,7 @@ import "./globals.css";
 import { Architects_Daughter } from 'next/font/google';
 import { Josefin_Sans } from "next/font/google";
 import Header from "./ui/Header/Header";
+import Footer from "./ui/Footer/Footer";
 
 // store fonts in a variable and specify parameters
 const architectsDaughter = Architects_Daughter({
@@ -37,6 +38,7 @@ export default function RootLayout({ children }) {
       >
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
