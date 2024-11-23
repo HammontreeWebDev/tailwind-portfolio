@@ -1,6 +1,68 @@
-import { BuildingOffice2Icon, EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
+import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
+import { useState } from 'react'
 
 export default function ContactForm() {
+
+    const [formValues, setFormValues] = useState({
+        firstName: "",
+        lastName: "",
+        phoneNumber: "",
+        email: "",
+        message: ""
+    });
+
+    const handleChange = (e) => {
+        const value = e.target.value;
+
+        setFormValues((prevValues) => ({
+            ...prevValues,
+            [e.target.name]: value
+        }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (
+            formValues.firstName !== "" &&
+            formValues.lastName !== "" &&
+            formValues.email !== "" &&
+            formValues.email.match(/^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/) &&
+            formValues.phoneNumber !== "" &&
+            formValues.message !== ""
+        ) {
+            try {
+                const response = await (fetch('/api/sendEmail', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formValues),
+                })
+                );
+
+                if (response.ok) {
+                    alert('Email Sent')
+                    console.log('Email Sent!')
+                } else {
+                    alert('Failed To Send Email')
+                    console.error('Failed To Send Email')
+                }
+            } catch (error) {
+                console.error('Failed to send email', error);
+            }
+
+            setFormValues({
+                firstName: "",
+                lastName: "",
+                phoneNumber: "",
+                email: "",
+                message: ""
+            });
+        } else {
+            alert('Please Fill Out All Required Fields')
+        }
+    };
+
     return (
         <div className="relative isolate">
             <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
@@ -44,8 +106,8 @@ export default function ContactForm() {
                         <h2 className=" title-text text-pretty text-4xl font-semibold tracking-tight text-[var(--primary2)] sm:text-5xl">General Inquiries</h2>
                         <p className="mt-6 text-lg leading-8 text-white">
                             If you have general questions for me, feel free to use this form to send me an email.
-                            <br/>
-                            <br/>
+                            <br />
+                            <br />
                             Please allow 24-72 business hours while waiting for a response.
                         </p>
                         <dl className="mt-10 space-y-4 text-base leading-7 text-white">
@@ -60,43 +122,58 @@ export default function ContactForm() {
                                     </a>
                                 </dd>
                             </div>
+                            <div className="flex gap-x-4">
+                                <dt className="flex-none">
+                                    <span className="sr-only">Phone</span>
+                                    <PhoneIcon aria-hidden="true" className="h-7 w-6 text-gray-400" />
+                                </dt>
+                                <dd>
+                                    <a href="mailto:hello@example.com" className="hover:text-white">
+                                        Text/Call (407) 202-3227
+                                    </a>
+                                </dd>
+                            </div>
                         </dl>
                     </div>
                 </div>
-                <form action="#" method="POST" className="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48">
+                <form onSubmit={handleSubmit} className="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48">
                     <div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
                         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                             <div>
-                                <label htmlFor="first-name" className="block text-sm font-semibold leading-6 text-white">
-                                    First name
+                                <label htmlFor="firstName" className="block text-sm font-semibold leading-6 text-white">
+                                    First name <span className='text-red-500'>*</span>
                                 </label>
                                 <div className="mt-2.5">
                                     <input
-                                        id="first-name"
-                                        name="first-name"
+                                        id="firstName"
+                                        name="firstName"
                                         type="text"
                                         autoComplete="given-name"
                                         className="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
+                                        value={formValues.firstName}
+                                        onChange={handleChange}
                                     />
                                 </div>
                             </div>
                             <div>
-                                <label htmlFor="last-name" className="block text-sm font-semibold leading-6 text-white">
-                                    Last name
+                                <label htmlFor="lastName" className="block text-sm font-semibold leading-6 text-white">
+                                    Last name <span className='text-red-500'>*</span>
                                 </label>
                                 <div className="mt-2.5">
                                     <input
-                                        id="last-name"
-                                        name="last-name"
+                                        id="lastName"
+                                        name="lastName"
                                         type="text"
                                         autoComplete="family-name"
                                         className="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
+                                        value={formValues.lastName}
+                                        onChange={handleChange}
                                     />
                                 </div>
                             </div>
                             <div className="sm:col-span-2">
                                 <label htmlFor="email" className="block text-sm font-semibold leading-6 text-white">
-                                    Email
+                                    Email <span className='text-red-500'>*</span>
                                 </label>
                                 <div className="mt-2.5">
                                     <input
@@ -105,26 +182,30 @@ export default function ContactForm() {
                                         type="email"
                                         autoComplete="email"
                                         className="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
+                                        value={formValues.email}
+                                        onChange={handleChange}
                                     />
                                 </div>
                             </div>
                             <div className="sm:col-span-2">
-                                <label htmlFor="phone-number" className="block text-sm font-semibold leading-6 text-white">
-                                    Phone number
+                                <label htmlFor="phoneNumber" className="block text-sm font-semibold leading-6 text-white">
+                                    Phone number <span className='text-red-500'>*</span>
                                 </label>
                                 <div className="mt-2.5">
                                     <input
-                                        id="phone-number"
-                                        name="phone-number"
+                                        id="phoneNumber"
+                                        name="phoneNumber"
                                         type="tel"
                                         autoComplete="tel"
                                         className="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
+                                        value={formValues.phoneNumber}
+                                        onChange={handleChange}
                                     />
                                 </div>
                             </div>
                             <div className="sm:col-span-2">
                                 <label htmlFor="message" className="block text-sm font-semibold leading-6 text-white">
-                                    Message
+                                    Message <span className='text-red-500'>*</span>
                                 </label>
                                 <div className="mt-2.5">
                                     <textarea
@@ -132,7 +213,8 @@ export default function ContactForm() {
                                         name="message"
                                         rows={4}
                                         className="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
-                                        defaultValue={''}
+                                        value={formValues.message}
+                                        onChange={handleChange}
                                     />
                                 </div>
                             </div>

@@ -1,3 +1,5 @@
+'use client';
+
 import CenteredCard from "../ui/common/CenteredCard/CenteredCard";
 import ContactForm from "../ui/ContactForm/ContactForm";
 
