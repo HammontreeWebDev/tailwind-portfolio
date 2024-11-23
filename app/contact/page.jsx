@@ -2,6 +2,7 @@
 
 import CenteredCard from "../ui/common/CenteredCard/CenteredCard";
 import ContactForm from "../ui/ContactForm/ContactForm";
+import Socials from "../ui/Socials/Socials";
 
 export default function Contact() {
   return (
@@ -16,6 +17,8 @@ export default function Contact() {
       />
 
       <ContactForm />
+
+      <Socials />
       
     </>
   );
