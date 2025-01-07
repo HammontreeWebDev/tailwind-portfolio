@@ -17,7 +17,7 @@ export default function TimelineSection() {
     {
       name: 'Founded Company',
       description:
-        'Hammontree Full-Stack Solutions was founded, so that I could share my passion with you.',
+        'Hammontree Full-Stack Solutions was founded, so that Kaileb could share his passion with you.',
       date: 'Jun 2023',
       dateTime: '2023-06',
     },
