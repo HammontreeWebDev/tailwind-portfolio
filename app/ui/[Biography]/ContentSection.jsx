@@ -1,49 +1,59 @@
+import Link from "next/link";
+
 export default function ContentSection() {
     return (
         < div className="mt-32 overflow-hidden sm:mt-40" >
             <div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
-                <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
-                    <div className="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
-                        <h2 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">Our people</h2>
-                        <p className="mt-6 text-xl/8 text-gray-600">
-                            Quasi est quaerat. Sit molestiae et. Provident ad dolorem occaecati eos iste. Soluta rerum quidem
-                            minus ut molestiae velit error quod. Excepturi quidem expedita molestias quas.
+                <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-100vw lg:flex-none lg:gap-y-8">
+                    <div className="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8 text-center">
+                        <h2 className="title-text text-4xl font-semibold tracking-tight text-[var(--primary2)] sm:text-5xl">
+                            Passion, Clarity, Focus
+                        </h2>
+                        {/* PASSION */}
+                        <p className="mt-6 text-xl/8 text-[var(--primary1)] title-text">
+                            Without Passion, There Is No Vision
                         </p>
-                        <p className="mt-6 text-base/7 text-gray-600">
-                            Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt
-                            amet fugiat veniam occaecat fugiat. Quasi aperiam sit non sit neque reprehenderit.
+                        <p className="mt-6 text-base/7 text-white">
+                            Passion is the spark that ignites purpose. It drives creativity, fuels ambition, and inspires action. Without passion, there is no vision, and without vision, the path forward remains unseen.
+                        </p>
+                        {/* CLARITY */}
+                        <p className="mt-6 text-xl/8 text-[var(--primary1)] title-text">
+                            Without Clarity, There Is No Direction
+                        </p>
+                        <p className="mt-6 text-base/7 text-white">
+                            Clarity transforms vision into actionable goals. It sharpens focus, illuminates priorities, and clears the path ahead. Without clarity, efforts scatter, and direction fades.
+                        </p>
+                        {/* FOCUS */}
+                        <p className="mt-6 text-xl/8 text-[var(--primary1)] title-text">
+                            Without Focus, There Is No Achievement
+                        </p>
+                        <p className="mt-6 text-base/7 text-white">
+                            Focus is the discipline that turns intention into reality. It channels energy, eliminates distractions, and ensures that every step forward brings you closer to success. Without focus, potential is left unrealized.
+                        </p>
+                        {/* SUCCESS */}
+                        <p className="mt-6 text-xl/8 text-[var(--primary1)] title-text">
+                            With Hammontree Full-Stack Solutions, Success Becomes Reality
+                        </p>
+                        <p className="mt-6 text-base/7 text-white">
+                            Success is not just an outcome—it is the culmination of passion, clarity, and focus. At Hammontree Full-Stack Solutions, we define success through your satisfaction. Your vision is our mission, and your achievement is our goal. Together, we turn ideas into reality and ensure your digital presence exceeds expectations.
+                            <br></br>
+                            <br></br>
+                            If you're ready to talk about your next step, then
+                            <span className=" mt-3">
+                                <Link className="text-md text-[var(--primary5)] title-text hover:text-[var(--primary4)]" href="/contact">
+                                    &nbsp;contact us&nbsp;
+                                </Link>
+                            </span>
+                            and we will get back to you soon for a consultation.
                         </p>
                     </div>
                     <div className="flex flex-wrap items-start justify-end gap-6 sm:gap-8 lg:contents">
-                        <div className="w-0 flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end">
+                        <div className="w-0 flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-center">
                             <img
                                 alt=""
-                                src="https://images.unsplash.com/photo-1670272502246-768d249768ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1152&q=80"
-                                className="aspect-[7/5] w-[37rem] max-w-none rounded-2xl bg-gray-50 object-cover"
+                                src="/img/bio/aboutPic1.jpg"
+                                className="aspect-[7/5] max-w-100vw rounded-2xl bg-gray-50 object-cover"
                             />
-                        </div>
-                        <div className="contents lg:col-span-2 lg:col-end-2 lg:ml-auto lg:flex lg:w-[37rem] lg:items-start lg:justify-end lg:gap-x-8">
-                            <div className="order-first flex w-64 flex-none justify-end self-end lg:w-auto">
-                                <img
-                                    alt=""
-                                    src="https://images.unsplash.com/photo-1605656816944-971cd5c1407f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=768&h=604&q=80"
-                                    className="aspect-[4/3] w-[24rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover"
-                                />
-                            </div>
-                            <div className="flex w-96 flex-auto justify-end lg:w-auto lg:flex-none">
-                                <img
-                                    alt=""
-                                    src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1152&h=842&q=80"
-                                    className="aspect-[7/5] w-[37rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover"
-                                />
-                            </div>
-                            <div className="hidden sm:block sm:w-0 sm:flex-auto lg:w-auto lg:flex-none">
-                                <img
-                                    alt=""
-                                    src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=768&h=604&q=80"
-                                    className="aspect-[4/3] w-[24rem] max-w-none rounded-2xl bg-gray-50 object-cover"
-                                />
-                            </div>
                         </div>
                     </div>
                 </div>
