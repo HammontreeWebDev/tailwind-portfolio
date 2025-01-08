@@ -7,10 +7,7 @@ const nextConfig = {
         remotePatterns: [
             { "hostname": 'api.badgr.io' }
         ]
-    },
-    plugins: [
-        forms,
-    ],
+    }
 };
 
 export default nextConfig;
