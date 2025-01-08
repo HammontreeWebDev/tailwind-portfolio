@@ -1,6 +1,6 @@
 'use client'
-import GridSection from "../ui/common/GridSection/GridSection"
-import ExpHeroSection from "../ui/[Experience]/ExpHeroSection"
+import GridSection from "@/app/ui/common/GridSection/GridSection"
+import ExpHeroSection from "@/app/ui/[Experience]/ExpHeroSection"
 
 export default function Experience() {
 

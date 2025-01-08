@@ -1,6 +1,6 @@
-import HeroImage from "./ui/common/HeroImage/HeroImage";
-import Testimonial from "./ui/common/Testimonial/Testimonial";
-import TechStack from "./ui/TechStack/TechStack";
+import HeroImage from "@/app/ui/common/HeroImage/HeroImage";
+import Testimonial from "@/app/ui/common/Testimonial/Testimonial";
+import TechStack from "@/app/ui/TechStack/TechStack";
 
 export default function Home() {
   return (

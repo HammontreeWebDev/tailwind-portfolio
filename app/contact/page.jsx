@@ -1,8 +1,8 @@
 'use client';
 
-import CenteredCard from "../ui/common/CenteredCard/CenteredCard";
-import ContactForm from "../ui/ContactForm/ContactForm";
-import Socials from "../ui/Socials/Socials";
+import CenteredCard from "@/app/ui/common/CenteredCard/CenteredCard";
+import ContactForm from "@/app/ui/ContactForm/ContactForm";
+import Socials from "@/app/ui/Socials/Socials";
 
 export default function Contact() {
   return (
