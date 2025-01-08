@@ -1,7 +1,7 @@
 'use client';
 
 import "./globals.css";
-
+// test comment
 // import fonts from next/font/google to avoid making requests from google
 import { Architects_Daughter } from 'next/font/google';
 import { Josefin_Sans } from "next/font/google";
