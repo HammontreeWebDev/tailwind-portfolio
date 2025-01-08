@@ -5,8 +5,8 @@ import "./globals.css";
 // import fonts from next/font/google to avoid making requests from google
 import { Architects_Daughter } from 'next/font/google';
 import { Josefin_Sans } from "next/font/google";
-import Header from "@/app/ui/Header/Header";
-import Footer from "@/app/ui/Footer/Footer";
+import Header from "@/app/ui/Header/Header.jsx";
+import Footer from "@/app/ui/Footer/Footer.jsx";
 
 // store fonts in a variable and specify parameters
 const architectsDaughter = Architects_Daughter({

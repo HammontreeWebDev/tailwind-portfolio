@@ -1,6 +1,6 @@
 'use client'
 import GridSection from "@/app/ui/common/GridSection/GridSection"
-import HeroImage from "@/app/ui/common/HeroImage/HeroImage"
+import HeroImage from "@/app/ui/common/HeroImage/HeroImage.jsx"
 
 export default function Portfolio() {
 

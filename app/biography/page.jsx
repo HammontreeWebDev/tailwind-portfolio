@@ -1,8 +1,8 @@
 'use client'
-import HeroSection from '@/app/ui/[Biography]/HeroSection'
-import TimelineSection from '@/app/ui/[Biography]/TimelineSection'
-import LogoSection from '@/app/ui/[Biography]/LogoSection'
-import ContentSection from '@/app/ui/[Biography]/ContentSection'
+import HeroSection from '@/app/ui/[Biography]/HeroSection.jsx'
+import TimelineSection from '@/app/ui/[Biography]/TimelineSection.jsx'
+import LogoSection from '@/app/ui/[Biography]/LogoSection.jsx'
+import ContentSection from '@/app/ui/[Biography]/ContentSection.jsx'
 
 export default function Biography() {
 
