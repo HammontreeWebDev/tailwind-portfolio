@@ -70,7 +70,7 @@ export default function Footer() {
     return (
         <footer className="bg-black">
             <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
-                <nav aria-label="Footer" className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12">
+                <nav aria-label="Footer" className="flex flex-col items-center space-y-6 sm:flex-row sm:justify-center sm:space-x-12 sm:space-y-0">
                     {navigation.main.map((item) => (
                         <div key={item.name} className="pb-6">
                             <a href={item.href} className="text-sm leading-6 text-white hover:text-[var(--primary4)]">

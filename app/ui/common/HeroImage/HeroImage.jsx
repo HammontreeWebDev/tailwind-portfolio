@@ -44,14 +44,14 @@ export default function HeroImage({ title, subText, buttonText, image1, image2, 
                     <div className="overflow-hidden">
                         <div className="mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
                             <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
-                                <div className="relative w-full lg:max-w-xl lg:shrink-0 xl:max-w-2xl">
+                                <div className="relative w-full text-center lg:text-left lg:max-w-xl lg:shrink-0 xl:max-w-2xl">
                                     <h1 className={'title-text text-[var(--primary2)] text-pretty text-5xl font-semibold tracking-tight sm:text-7xl'}>
                                         {title}
                                     </h1>
                                     <p className={'mt-8 text-pretty text-lg font-medium sm:max-w-md sm:text-xl/8 lg:max-w-none'}>
                                         {subText}
                                     </p>
-                                    <div className="mt-10 flex items-center gap-x-6">
+                                    <div className="mt-10 flex items-center justify-center lg:justify-start gap-x-6">
                                         <a
                                             href={btnHref}
                                             className="rounded-md bg-[var(--primary5)] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-white hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"

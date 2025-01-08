@@ -219,7 +219,7 @@ export default function ContactForm() {
                                 </div>
                             </div>
                         </div>
-                        <div className="mt-8 flex justify-end">
+                        <div className="mt-8 flex justify-center lg:justify-end">
                             <button
                                 type="submit"
                                 className="rounded-md bg-[var(--primary5)] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-white hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
