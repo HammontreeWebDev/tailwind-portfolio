@@ -105,7 +105,7 @@ export default function ContactForm() {
                         </div>
                         <h2 className=" title-text text-pretty text-4xl font-semibold tracking-tight text-[var(--primary2)] sm:text-5xl">General Inquiries</h2>
                         <p className="mt-6 text-lg leading-8 text-white">
-                            If you have general questions for me, feel free to use this form to send me an email.
+                            If you have general questions for Hammontree Full-Stack Solutions, feel free to use this form to send an email.
                             <br />
                             <br />
                             Please allow 24-72 business hours while waiting for a response.

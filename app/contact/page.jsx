@@ -11,7 +11,7 @@ export default function Contact() {
       <CenteredCard
         title="Start Your Project"
         line1="Are you ready to start your project?"
-        line2="Let me know more about your vision by filling out a brief questionnaire."
+        line2="Let Hammontree Full-Stack Solutions know more about your vision by filling out a brief questionnaire."
         btnText="Start"
         url="https://app.hellobonsai.com/f/a14a29cd17402aa"
       />

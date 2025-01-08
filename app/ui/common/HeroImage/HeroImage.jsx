@@ -54,7 +54,7 @@ export default function HeroImage({ title, subText, buttonText, image1, image2, 
                                     <div className="mt-10 flex items-center gap-x-6">
                                         <a
                                             href={btnHref}
-                                            className="rounded-md bg-[var(--primary5)] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[var(--primary4)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                                            className="rounded-md bg-[var(--primary5)] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-white hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                                         >
                                             {buttonText}
                                         </a>
