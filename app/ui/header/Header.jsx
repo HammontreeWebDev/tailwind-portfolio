@@ -5,6 +5,7 @@ import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
+  { name: 'KailebHammontree.com', href: 'https://www.kailebhammontree.com/' },
   { name: 'Biography', href: '/biography' },
   { name: 'Contact', href: '/contact' },
   { name: 'Portfolio', href: '/portfolio' },
@@ -39,7 +40,7 @@ export default function Header() {
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
           {navigation.map((item) => (
-            <a key={item.name} href={item.href} className="text-sm font-semibold leading-6">
+            <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 hover:text-[var(--primary4)]">
               {item.name}
             </a>
           ))}

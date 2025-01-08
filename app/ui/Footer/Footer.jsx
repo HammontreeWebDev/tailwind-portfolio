@@ -2,10 +2,11 @@ import Image from "next/image";
 
 const navigation = {
     main: [
-        { name: 'Biography', href: '#' },
+        { name: 'KailebHammontree.com', href: 'https://www.kailebhammontree.com/' },
+        { name: 'Biography', href: '/biography' },
         { name: 'Contact', href: '/contact' },
-        { name: 'Portfolio', href: '#' },
-        { name: 'Experience', href: '#' },
+        { name: 'Portfolio', href: '/portfolio' },
+        { name: 'Experience', href: '/experience' },
     ],
     social: [
         {
