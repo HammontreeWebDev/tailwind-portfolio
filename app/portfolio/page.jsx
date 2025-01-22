@@ -46,7 +46,16 @@ export default function Portfolio() {
                             imageUrl:
                                 '/img/portfolio/jesse.png',
                             alt: 'Jesse Ryder Brown Foundation',
-                            category: { title: 'ReactJS | NextJS | Node.js | CSS | Figma' },
+                            category: { title: 'ReactJS | NextJS | Node.js | CSS | Figma | Vercel' },
+                        },
+                        {
+                            id: 4,
+                            title: 'To Be With Counseling',
+                            href: 'https://www.tobewithcounseling.com',
+                            imageUrl:
+                                '/img/portfolio/tobewith.png',
+                            alt: 'Jesse Ryder Brown Foundation',
+                            category: { title: 'ReactJS | NextJS | Tailwind | CSS | Figma | Vercel' },
                         },
                         // More posts...
                     ]}
