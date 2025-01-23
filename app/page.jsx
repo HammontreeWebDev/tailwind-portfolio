@@ -2,6 +2,18 @@ import HeroImage from "@/app/ui/common/HeroImage/HeroImage.jsx";
 import Testimonial from "@/app/ui/common/Testimonial/Testimonial.jsx";
 import TechStack from "@/app/ui/TechStack/TechStack.jsx";
 
+export const metadata = {
+  title: {
+    template: '%s | Hammontree Full-Stack Solutions LLC',
+    default: 'Hammontree Full-Stack Solutions LLC',
+  },
+  description: 'Discover Hammontree Full-Stack Solutions and learn about how they can help you transform your vision into digital reality.',
+  keywords: 'Kaileb, Hammontree, Full-Stack, Solutions, Web Development, Website Designer, Create Website, javascript, react, central florida, florida, orlando',
+  icons: {
+    icon: "/img/favicon.ico",
+  },
+}
+
 export default function Home() {
   return (
     <>
