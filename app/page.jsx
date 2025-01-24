@@ -47,7 +47,7 @@ export default function Home() {
         image5={"/img/home/eyes.png"}
         btnHref={"/contact"}
       />
-      <div className="px-6 py-12 bg-gray-900">
+      <div className="px-6 py-12">
         <h2 className="text-3xl font-bold text-white title-text text-center mb-8">
           What Our Clients Say
         </h2>
