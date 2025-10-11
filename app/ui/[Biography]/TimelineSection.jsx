@@ -35,13 +35,24 @@ export default function TimelineSection() {
     {
       name: 'Jesse Ryder Brown Foundation',
       description:
-        `A website for the Jesse Ryder Brown Foundation, "J-Boo Customs", was launched. Click on the link below to learn how you can honor the memory of 11 year old Jesse Brown and connect with the organization responsible for spreading awareness of Strep A.`,
+        `A website for the Jesse Ryder Brown Foundation, "J-Boo Customs", was launched. This project honored the memory of 11 year old Jesse Brown and allowed users to connect with the organization responsible for spreading awareness of Strep A. This project is unavailable to view as of January 2025.`,
       link: {
-        text: "J-Boo Customs",
-        url: "https://www.j-boocustoms.org/",
+        text: "J-Boo Customs [No longer available]",
+        url: "",
       },
       date: 'Sep 2023',
       dateTime: '2023-09',
+    },
+    {
+      name: 'To Be With Counseling',
+      description:
+        `A website for To Be With Counseling was launched. Karah, from To Be With Counseling, is a Registered Mental Health Counselor Intern in the State of Florida who is passionate about walking alongside her clients in their search for long-lasting freedom from eating disorders, body image issues, and body shame. In assisting her clients uncover the root issues that have contributed to the development of an unhealthy relationship with food and body, she has witnessed the unequivocal transformation that occurs when one is able to come back home to themselves, utilizing compassion, kindness, and curiosity, in this needed restoration process. Click the link below to find out more!`,
+      link: {
+        text: "To Be With Counseling",
+        url: "https://www.tobewithcounseling.com/",
+      },
+      date: 'Jan 2025',
+      dateTime: '2025-01',
     },
   ];
   
