@@ -23,15 +23,6 @@ export default function Portfolio() {
                     posts={[
                         {
                             id: 1,
-                            title: 'Outta Touch',
-                            href: 'https://outta-touch.herokuapp.com/',
-                            imageUrl:
-                                '/img/portfolio/outtaTouch.png',
-                            alt: 'Outta Touch',
-                            category: { title: 'MongoDB | Express.js | ReactJS | Node.js | Apollo Client | Apollo Server | Web-sockets | GraphQL | GraphQL Subscriptions' },
-                        },
-                        {
-                            id: 2,
                             title: 'BroFit Personal Training',
                             href: 'https://www.reesewilder.com/',
                             imageUrl:
@@ -40,16 +31,7 @@ export default function Portfolio() {
                             category: { title: 'HTML | BootStrap | CSS | JavaScript' },
                         },
                         {
-                            id: 3,
-                            title: 'Jesse Ryder Brown Foundation',
-                            href: 'https://www.j-boocustoms.org/',
-                            imageUrl:
-                                '/img/portfolio/jesse.png',
-                            alt: 'Jesse Ryder Brown Foundation',
-                            category: { title: 'ReactJS | NextJS | Node.js | CSS | Figma | Vercel' },
-                        },
-                        {
-                            id: 4,
+                            id: 2,
                             title: 'To Be With Counseling',
                             href: 'https://www.tobewithcounseling.com',
                             imageUrl:
