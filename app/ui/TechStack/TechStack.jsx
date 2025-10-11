@@ -19,13 +19,19 @@ export default function TechStack() {
         { name: "HTML5", src: "/img/techStack/html5.svg", href: "https://developer.mozilla.org/en-US/docs/Glossary/HTML5" },
         { name: "JavaScript", src: "/img/techStack/javascript.svg", href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
         { name: "jQuery", src: "/img/techStack/jQuery.svg", href: "https://jquery.com/" },
+        { name: "ReactJS", src: "/img/techStack/ReactJS.svg", href: "https://react.dev/" },
+        { name: "Vercel", src: "/img/techStack/vercel.svg", href: "https://vercel.com" },
+    ];
+
+    const additionalTech = [
+        { name: "Tableau", src: "/img/techStack/Tableau.svg", href: "https://www.tableau.com/why-tableau/what-is-tableau" },
+        { name: "DataBricks", src: "/img/techStack/Databricks.svg", href: "https://docs.databricks.com/aws/en/introduction/" },
+        { name: "Alteryx", src: "/img/techStack/Alteryx.svg", href: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+        { name: "SQL", src: "/img/techStack/sql.svg", href: "https://www.w3schools.com/sql/" },
         { name: "MongoDB", src: "/img/techStack/MongoDB.svg", href: "https://www.mongodb.com/" },
         { name: "mySQL", src: "/img/techStack/mySQL.svg", href: "https://www.mysql.com/" },
         { name: "NodeJS", src: "/img/techStack/NodeJS.svg", href: "https://nodejs.org/en" },
-        { name: "ReactJS", src: "/img/techStack/ReactJS.svg", href: "https://react.dev/" },
-        { name: "SQL", src: "/img/techStack/sql.svg", href: "https://www.w3schools.com/sql/" },
-        { name: "Vercel", src: "/img/techStack/vercel.svg", href: "https://vercel.com" },
-    ];
+    ]
 
     const handleModalOpen = (index) => {
         setOpenModalIndex(index);
@@ -39,14 +45,55 @@ export default function TechStack() {
         <div className="bg-[var(--p4-25)] py-24 sm:py-32">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <h2 className="title-text text-center text-lg font-semibold leading-8 text-white">
-                    Your next project could be built using...
+                    Website/Application Development
                 </h2>
+
                 <p className="text-center text-sm italic font-bold leading-8 text-[var(--primary2)]">
                     (Click the icons to learn more)
                 </p>
 
                 <div className="mx-auto mt-10 flex flex-wrap justify-evenly items-center gap-x-8 gap-y-10 max-w-lg sm:max-w-xl lg:mx-0 lg:max-w-none">
                     {techStack.map((tech, index) => (
+                        <div key={index} className="flex flex-col items-center">
+                            <Image
+                                alt={tech.name}
+                                src={tech.src}
+                                width={100}
+                                height={100}
+                                className="object-contain cursor-pointer"
+                                onClick={() => handleModalOpen(index)} // Open the modal for the clicked image
+                            />
+
+                            {/* Conditionally render the modal for the clicked image */}
+                            {openModalIndex === index && (
+                                <Modal
+                                    title={tech.name}
+                                    content={`Would you like to learn more about ${tech.name}?`}
+                                    leftButton="Exit"
+                                    rightButton="Learn More"
+                                    onClose={handleModalClose} // Close the modal when either button is clicked
+                                    imagesrc={tech.src}
+                                    imagealt={tech.name}
+                                    href={tech.href}
+                                />
+                            )}
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            {/* //! Additional Technologies */}
+
+            <div className="mx-auto max-w-7xl px-6 lg:px-8 pt-24">
+                <h2 className="title-text text-center text-lg font-semibold leading-8 text-white pt-3">
+                    Backend Development & Data Analysis/Visualization
+                </h2>
+                <p className="text-center text-sm italic font-bold leading-8 text-[var(--primary2)]">
+                    (Click the icons to learn more)
+                </p>
+
+                <div className="mx-auto mt-10 flex flex-wrap justify-evenly items-center gap-x-8 gap-y-10 max-w-lg sm:max-w-xl lg:mx-0 lg:max-w-none">
+                    {additionalTech.map((tech, index) => (
                         <div key={index} className="flex flex-col items-center">
                             <Image
                                 alt={tech.name}

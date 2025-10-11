@@ -1,6 +1,5 @@
 import HeroImage from "@/app/ui/common/HeroImage/HeroImage.jsx";
 import Testimonial from "@/app/ui/common/Testimonial/Testimonial.jsx";
-import TechStack from "@/app/ui/TechStack/TechStack.jsx";
 import SwiperCarousel from "./ui/common/Swiper/SwiperCarousel";
 
 const slideArray = [
@@ -55,8 +54,6 @@ export default function Home() {
           slides={slideArray}
         />
       </div>
-      <TechStack />
-
     </>
   );
 }

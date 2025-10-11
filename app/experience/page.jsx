@@ -1,6 +1,7 @@
 'use client'
-import GridSection from "@/app/ui/common/GridSection/GridSection.jsx"
-import ExpHeroSection from "@/app/ui/[Experience]/ExpHeroSection.jsx"
+import GridSection from "@/app/ui/common/GridSection/GridSection.jsx";
+import ExpHeroSection from "@/app/ui/[Experience]/ExpHeroSection.jsx";
+import TechStack from "../ui/TechStack/TechStack";
 
 export default function Experience() {
 
@@ -13,15 +14,24 @@ export default function Experience() {
                     posts={[
                         {
                             id: 1,
-                            title: 'Software Engineering Lead Analyst',
+                            title: 'Business Analytics Lead Analyst',
                             href: 'https://www.linkedin.com/in/kaileb-hammontree/',
                             imageUrl:
-                                '/img/experience/evernorth.png',
-                            alt: 'Software Engineer',
-                            category: { title: 'April 2024 - Present | Contract Position With Evernorth Health Services' },
+                                '/img/experience/forsyth_health_logo.jpeg',
+                            alt: 'Business Analyst',
+                            category: { title: 'April 2025 - Present | Forsyth Health' },
                         },
                         {
                             id: 2,
+                            title: 'Software Engineering Lead Analyst',
+                            href: 'https://www.linkedin.com/in/kaileb-hammontree/',
+                            imageUrl:
+                                '/img/experience/evernorth_logo.jpeg',
+                            alt: 'Software Engineer',
+                            category: { title: 'April 2024 - March 2025 | Contract Position With Evernorth Health Services' },
+                        },
+                        {
+                            id: 3,
                             title: 'Owner | Developer',
                             href: '/portfolio',
                             imageUrl:
@@ -32,8 +42,8 @@ export default function Experience() {
                         // More posts...
                     ]}
                 />
-
-<GridSection
+                <TechStack />
+                <GridSection
                     title={"Professional Education"}
                     posts={[
                         {
@@ -43,7 +53,7 @@ export default function Experience() {
                             imageUrl:
                                 '/img/experience/bootCamp.webp',
                             alt: 'UCF Coding Boot Camp',
-                            category: { title: 'September 2022 - December 2022 | University Of Central Florida' },
+                            category: { title: 'Certified December 2022 | University Of Central Florida' },
                         },
                         {
                             id: 2,
@@ -52,7 +62,7 @@ export default function Experience() {
                             imageUrl:
                                 '/img/experience/cyber.webp',
                             alt: 'Cyber Defense Professional',
-                            category: { title: 'February 2021 - December 2021 | University Of Central Florida' },
+                            category: { title: 'Certified December 2021 | University Of Central Florida' },
                         },
                         // More posts...
                     ]}
