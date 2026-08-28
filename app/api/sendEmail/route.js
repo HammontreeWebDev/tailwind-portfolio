@@ -26,12 +26,23 @@ export async function POST(req) {
   } catch (error) {
     console.error('Error sending email:', error);
 
-    if (error.message === 'EMAIL_NOT_CONFIGURED') {
+    if (error.message === 'GRAPH_NOT_CONFIGURED') {
+      console.error(
+        'Microsoft Graph is not configured. Set AZURE_TENANT_ID, AZURE_CLIENT_ID, and AZURE_CLIENT_SECRET in Vercel, then remove legacy MAIL_* variables.',
+      );
+      return NextResponse.json({ error: 'Email service is not configured.' }, { status: 503 });
+    }
+
+    if (error.message === 'SMTP_NOT_CONFIGURED') {
       return NextResponse.json({ error: 'Email service is not configured.' }, { status: 503 });
     }
 
     if (error.message === 'GRAPH_AUTH_FAILED') {
       return NextResponse.json({ error: 'Email service authentication failed.' }, { status: 503 });
+    }
+
+    if (error.message === 'GRAPH_SEND_FAILED') {
+      return NextResponse.json({ error: 'Failed to send email.' }, { status: 500 });
     }
 
     return NextResponse.json({ error: 'Failed to send email.' }, { status: 500 });

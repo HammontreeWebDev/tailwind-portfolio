@@ -19,6 +19,10 @@ export function isSmtpConfigured() {
   return Boolean(process.env.MAIL_HOST && process.env.MAIL_USER && process.env.MAIL_PASS);
 }
 
+function emailProvider() {
+  return (process.env.EMAIL_PROVIDER || 'graph').toLowerCase();
+}
+
 function clamp(value, max) {
   return value.slice(0, max);
 }
@@ -182,15 +186,19 @@ async function sendViaSmtp(submission) {
 }
 
 export async function sendContactEmail(submission) {
-  if (isGraphConfigured()) {
-    await sendViaMicrosoftGraph(submission);
-    return;
-  }
+  const provider = emailProvider();
 
-  if (isSmtpConfigured()) {
+  if (provider === 'smtp') {
+    if (!isSmtpConfigured()) {
+      throw new Error('SMTP_NOT_CONFIGURED');
+    }
     await sendViaSmtp(submission);
     return;
   }
 
-  throw new Error('EMAIL_NOT_CONFIGURED');
+  if (!isGraphConfigured()) {
+    throw new Error('GRAPH_NOT_CONFIGURED');
+  }
+
+  await sendViaMicrosoftGraph(submission);
 }
