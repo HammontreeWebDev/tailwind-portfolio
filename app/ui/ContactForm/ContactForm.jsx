@@ -1,7 +1,7 @@
 'use client';
 
 import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import GradientButton from '@/app/ui/common/GradientButton/GradientButton.jsx'
 import { siteConfig } from '@/app/lib/site.js'
 
@@ -12,12 +12,18 @@ const EMPTY_FORM = {
   phoneNumber: '',
   email: '',
   message: '',
+  company: '',
 };
 
 export default function ContactForm() {
   const [formValues, setFormValues] = useState(EMPTY_FORM);
+  const [formStartedAt, setFormStartedAt] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState(null);
+
+  useEffect(() => {
+    setFormStartedAt(Date.now());
+  }, []);
 
   const handleChange = (e) => {
     setFormValues((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -52,6 +58,8 @@ export default function ContactForm() {
           phoneNumber: formValues.phoneNumber.trim(),
           email: formValues.email.trim(),
           message: formValues.message.trim(),
+          company: formValues.company,
+          formStartedAt,
         }),
       });
 
@@ -66,6 +74,7 @@ export default function ContactForm() {
       }
 
       setFormValues(EMPTY_FORM);
+      setFormStartedAt(Date.now());
       setStatus({ type: 'success', message: "Message sent! We'll be in touch within 24–72 business hours." });
     } catch {
       setStatus({ type: 'error', message: 'Something went wrong. Please try again.' });
@@ -101,7 +110,19 @@ export default function ContactForm() {
           </dl>
         </div>
 
-        <form onSubmit={handleSubmit} noValidate className="card-surface p-8 sm:p-10">
+        <form onSubmit={handleSubmit} noValidate className="card-surface relative p-8 sm:p-10">
+          <div className="hidden" aria-hidden="true">
+            <label htmlFor="company">Company</label>
+            <input
+              id="company"
+              name="company"
+              type="text"
+              tabIndex={-1}
+              autoComplete="off"
+              value={formValues.company}
+              onChange={handleChange}
+            />
+          </div>
           <div className="grid grid-cols-1 gap-x-6 gap-y-5 sm:grid-cols-2">
             {[
               { id: 'firstName', label: 'First name' },
