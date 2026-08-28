@@ -1,19 +1,16 @@
 export async function generateMetadata() {
-    return {
-        title: 'Portfolio | Hammontree Full-Stack Solutions LLC',
-        description: 'Take a look at Kaileb Hammontree and his project portfolio.',
-        keywords: 'Portfolio, projects, websites, web design, Hammontree, Web Development, Full-Stack, Solutions, Biography, Kaileb',
-        icons: {
-            icon: "/img/favicon.ico",
-          },
-    };
-    };
-    
-    export default function PortfolioLayout({ children }) {
-      return (
-        <>
-            {children}   
-        </>
-      );
-    };
-    
+  return {
+    title: 'Portfolio',
+    description: 'Featured client projects by Hammontree Full-Stack Solutions — custom web and app development for startups and enterprise.',
+    alternates: { canonical: '/portfolio' },
+    openGraph: {
+      title: 'Project Portfolio | Hammontree Full-Stack Solutions',
+      description: 'Explore client websites and applications built by Hammontree Full-Stack Solutions.',
+      url: '/portfolio',
+    },
+  };
+}
+
+export default function PortfolioLayout({ children }) {
+  return children;
+}

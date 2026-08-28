@@ -3,46 +3,239 @@
 @tailwind utilities;
 
 :root {
-  --background: #000000;
-  --foreground: #ffffff;
+  /* ── Brand palette (strict) ── */
+  --color-cyan: #00f2fe;
+  --color-accent: #ff6500;
+  --color-secondary: #30b8bf;
+  --color-copper: #aa6639;
+  --color-slate: #407c80;
 
-  /* Color Scheme */
-  --primary1: #B83FFC;
-  --primary2: #FC3F96;
-  --primary3: #F63FFC;
-  --primary4: #7A3FFC;
-  --primary5: #FC473F;
+  /* ── 60% Canvas ── */
+  --color-canvas: #0a1416;
+  --color-canvas-elevated: #111f22;
+  --color-canvas-muted: #1a2e31;
+  --color-canvas-border: #243a3d;
 
-  --alt1: #F993FC;
-  --alt2: #725E7D;
-  --alt3: #7D5E6C;
-  --alt4: #675E7D;
-  --alt5: #7D5F5E;
+  /* ── 30% Structure & text ── */
+  --color-ink: #f4f7f8;
+  --color-ink-muted: #b8d4d6;
+  --color-ink-subtle: #8bbec2;
 
-  /* trans colors */
-  --p4-25: rgba(122, 63, 252, 0.25);
-  --p4-50: rgba(122, 63, 252, 0.50);
+  /* ── Semantic surfaces ── */
+  --background: var(--color-canvas);
+  --foreground: var(--color-ink);
+  --surface: rgba(48, 184, 191, 0.04);
+  --surface-hover: rgba(48, 184, 191, 0.08);
+  --border: rgba(48, 184, 191, 0.12);
+  --border-hover: rgba(48, 184, 191, 0.28);
 
-  --p5-25: rgba(252, 71, 63, 0.25);
+  /* Legacy aliases → new palette */
+  --dev-from: var(--color-cyan);
+  --dev-to: var(--color-accent);
+  --dev-glow: rgba(48, 184, 191, 0.2);
+  --primary1: var(--color-secondary);
+  --primary2: var(--color-cyan);
+  --primary4: var(--color-secondary);
+  --primary5: var(--color-accent);
+  --p4-25: rgba(48, 184, 191, 0.1);
+  --p4-50: rgba(48, 184, 191, 0.25);
+  --p5-25: rgba(255, 101, 0, 0.12);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--body-text);
+  font-family: var(--font-body);
+  overflow-x: hidden;
 }
 
-.title-text {
-  font-family: var(--title-text);
-};
+::selection {
+  background: rgba(48, 184, 191, 0.35);
+  color: var(--color-ink);
+}
 
-.body-text {
-  font-family: var(--body-text);
-};
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.stagger-1 { animation-delay: 0.08s; }
+.stagger-2 { animation-delay: 0.16s; }
+.stagger-3 { animation-delay: 0.24s; }
+.stagger-4 { animation-delay: 0.32s; }
+.stagger-5 { animation-delay: 0.4s; }
+
+/* ── Layout utilities ── */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(48, 184, 191, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(48, 184, 191, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 70% 50% at 50% 30%, black 10%, transparent 70%);
+}
+
+.noise-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.02;
+  pointer-events: none;
+}
+
+/* ── Typography ── */
+.text-gradient-hero {
+  background: linear-gradient(
+    135deg,
+    var(--color-ink) 0%,
+    var(--color-secondary) 55%,
+    var(--color-cyan) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.eyebrow {
+  @apply text-xs font-semibold uppercase tracking-[0.2em] text-secondary;
+}
+
+/* ── Surfaces ── */
+.glass-surface {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+}
+
+.card-surface {
+  @apply rounded-2xl border border-canvas-border bg-canvas-elevated shadow-card;
+}
+
+.card-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-shine::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(48, 184, 191, 0.06) 50%,
+    transparent 60%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+  pointer-events: none;
+}
+
+.card-shine:hover::before {
+  transform: translateX(100%);
+}
+
+/* ── 10% Conversion — CTAs ONLY ── */
+.btn-accent {
+  @apply inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-white transition-all;
+}
+
+.btn-accent:hover {
+  @apply bg-accent-hover shadow-accent;
+  transform: translateY(-1px);
+}
+
+.btn-accent:focus-visible {
+  @apply outline outline-2 outline-offset-2 outline-accent;
+}
+
+/* Secondary ghost button (not conversion) */
+.btn-ghost {
+  @apply inline-flex items-center gap-2 rounded-lg border border-canvas-border bg-canvas-elevated px-6 py-3 text-sm font-semibold text-ink-muted transition-all;
+}
+
+.btn-ghost:hover {
+  @apply border-secondary/40 text-ink;
+}
+
+/* Legacy alias */
+.btn-gradient {
+  @apply btn-accent;
+}
+
+.input-field {
+  @apply block w-full rounded-lg border border-canvas-border bg-canvas-elevated px-4 py-3 text-ink shadow-sm transition-all placeholder:text-ink-subtle/60 focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/30 sm:text-sm;
+}
+
+/* Skip link — visible on keyboard focus */
+.skip-link {
+  @apply sr-only;
+}
+.skip-link:focus {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  z-index: 100;
+  width: auto;
+  height: auto;
+  padding: 0.75rem 1rem;
+  clip: auto;
+  overflow: visible;
+  white-space: nowrap;
+  @apply rounded-lg bg-accent text-sm font-semibold text-white shadow-accent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .animate-float {
+    animation: none;
+  }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--color-secondary) !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--color-secondary) !important;
+}

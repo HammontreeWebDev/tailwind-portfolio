@@ -9,32 +9,33 @@ import "swiper/css/effect-cube";
 import { Navigation, Pagination, Autoplay, EffectCube } from "swiper/modules";
 
 export default function SwiperCarousel({ slides }) {
-    return (
-        <Swiper
-            modules={[Navigation, Pagination, Autoplay, EffectCube]}
-            autoplay={{
-                delay: 5000, // 5 seconds
-                disableOnInteraction: false, // Keeps autoplay active
-                pauseOnMouseEnter: true, // Pauses autoplay on hover
-            }}
-            effect="cube" // Apply the cube effect
-            cubeEffect={{
-                shadow: true, // Add a shadow around the cube
-                slideShadows: true, // Add shadows on slides
-                shadowOffset: 20, // Shadow offset
-                shadowScale: 0.94, // Shadow scale
-            }}
-            spaceBetween={30}
-            slidesPerView={1}
-            navigation
-            pagination={{ clickable: true }}
-            className="max-w-7xl mx-auto"
-        >
-            {slides.map((slide, index) => (
-                <SwiperSlide key={index}>
-                    {slide}
-                </SwiperSlide>
-            ))}
-        </Swiper>
-    )
+  return (
+    <Swiper
+      modules={[Navigation, Pagination, Autoplay, EffectCube]}
+      autoplay={{
+        delay: 6000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      }}
+      effect="cube"
+      cubeEffect={{
+        shadow: true,
+        slideShadows: true,
+        shadowOffset: 20,
+        shadowScale: 0.94,
+      }}
+      spaceBetween={30}
+      slidesPerView={1}
+      navigation
+      pagination={{ clickable: true }}
+      className="max-w-7xl mx-auto"
+      aria-label="Client testimonials carousel"
+    >
+      {slides.map((slide, index) => (
+        <SwiperSlide key={index} role="group" aria-roledescription="slide" aria-label={`Testimonial ${index + 1} of ${slides.length}`}>
+          {slide}
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  );
 }
