@@ -5,122 +5,79 @@ import Modal from "@/app/ui/common/Modal/Modal.jsx";
 import { useState } from "react";
 
 export default function TechStack() {
-    // State to track which modal is open
-    const [openModalIndex, setOpenModalIndex] = useState(null);
+  const [openModal, setOpenModal] = useState(null);
 
-    // Array of tech stack data for simplicity
-    const techStack = [
-        { name: "Apollo", src: "/img/techStack/Apollo.svg", href: "https://www.apollographql.com/docs/apollo-server" },
-        { name: "CSS3", src: "/img/techStack/css3.svg", href: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
-        { name: "ExpressJS", src: "/img/techStack/ExpressJS.svg", href: "https://expressjs.com/" },
-        { name: "Figma", src: "/img/techStack/figma.svg", href: "https://www.figma.com/" },
-        { name: "Github Pages", src: "/img/techStack/ghPages.svg", href: "https://pages.github.com/" },
-        { name: "GraphQL", src: "/img/techStack/GraphQL.svg", href: "https://graphql.org/" },
-        { name: "HTML5", src: "/img/techStack/html5.svg", href: "https://developer.mozilla.org/en-US/docs/Glossary/HTML5" },
-        { name: "JavaScript", src: "/img/techStack/javascript.svg", href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
-        { name: "jQuery", src: "/img/techStack/jQuery.svg", href: "https://jquery.com/" },
-        { name: "ReactJS", src: "/img/techStack/ReactJS.svg", href: "https://react.dev/" },
-        { name: "Vercel", src: "/img/techStack/vercel.svg", href: "https://vercel.com" },
-    ];
+  const techStack = [
+    { name: "Apollo", src: "/img/techStack/Apollo.svg", href: "https://www.apollographql.com/docs/apollo-server" },
+    { name: "CSS3", src: "/img/techStack/css3.svg", href: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+    { name: "ExpressJS", src: "/img/techStack/ExpressJS.svg", href: "https://expressjs.com/" },
+    { name: "Figma", src: "/img/techStack/figma.svg", href: "https://www.figma.com/" },
+    { name: "Github Pages", src: "/img/techStack/ghPages.svg", href: "https://pages.github.com/" },
+    { name: "GraphQL", src: "/img/techStack/GraphQL.svg", href: "https://graphql.org/" },
+    { name: "HTML5", src: "/img/techStack/html5.svg", href: "https://developer.mozilla.org/en-US/docs/Glossary/HTML5" },
+    { name: "JavaScript", src: "/img/techStack/javascript.svg", href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+    { name: "jQuery", src: "/img/techStack/jQuery.svg", href: "https://jquery.com/" },
+    { name: "ReactJS", src: "/img/techStack/ReactJS.svg", href: "https://react.dev/" },
+    { name: "Vercel", src: "/img/techStack/vercel.svg", href: "https://vercel.com" },
+  ];
 
-    const additionalTech = [
-        { name: "Tableau", src: "/img/techStack/Tableau.svg", href: "https://www.tableau.com/why-tableau/what-is-tableau" },
-        { name: "DataBricks", src: "/img/techStack/Databricks.svg", href: "https://docs.databricks.com/aws/en/introduction/" },
-        { name: "Alteryx", src: "/img/techStack/Alteryx.svg", href: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
-        { name: "SQL", src: "/img/techStack/sql.svg", href: "https://www.w3schools.com/sql/" },
-        { name: "MongoDB", src: "/img/techStack/MongoDB.svg", href: "https://www.mongodb.com/" },
-        { name: "mySQL", src: "/img/techStack/mySQL.svg", href: "https://www.mysql.com/" },
-        { name: "NodeJS", src: "/img/techStack/NodeJS.svg", href: "https://nodejs.org/en" },
-    ]
+  const additionalTech = [
+    { name: "Tableau", src: "/img/techStack/Tableau.svg", href: "https://www.tableau.com/why-tableau/what-is-tableau" },
+    { name: "DataBricks", src: "/img/techStack/Databricks.svg", href: "https://docs.databricks.com/aws/en/introduction/" },
+    { name: "Alteryx", src: "/img/techStack/Alteryx.svg", href: "https://www.alteryx.com/" },
+    { name: "SQL", src: "/img/techStack/sql.svg", href: "https://www.w3schools.com/sql/" },
+    { name: "MongoDB", src: "/img/techStack/MongoDB.svg", href: "https://www.mongodb.com/" },
+    { name: "mySQL", src: "/img/techStack/mySQL.svg", href: "https://www.mysql.com/" },
+    { name: "NodeJS", src: "/img/techStack/NodeJS.svg", href: "https://nodejs.org/en" },
+  ];
 
-    const handleModalOpen = (index) => {
-        setOpenModalIndex(index);
-    };
+  const renderGrid = (items, prefix) => (
+    <div className="mx-auto mt-10 flex flex-wrap justify-center items-center gap-4 max-w-4xl">
+      {items.map((tech, index) => {
+        const key = `${prefix}-${index}`;
+        return (
+          <div key={key}>
+            <button
+              type="button"
+              onClick={() => setOpenModal(key)}
+              className="rounded-xl border border-canvas-border bg-canvas-elevated p-4 transition-colors hover:border-secondary/40 hover:bg-canvas-muted"
+            >
+              <Image alt={tech.name} src={tech.src} width={56} height={56} className="object-contain opacity-80" />
+            </button>
+            {openModal === key && (
+              <Modal
+                title={tech.name}
+                content={`Would you like to learn more about ${tech.name}?`}
+                leftButton="Close"
+                rightButton="Learn More"
+                onClose={() => setOpenModal(null)}
+                imagesrc={tech.src}
+                imagealt={tech.name}
+                href={tech.href}
+              />
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
 
-    const handleModalClose = () => {
-        setOpenModalIndex(null);
-    };
-
-    return (
-        <div className="bg-[var(--p4-25)] py-24 sm:py-32">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                <h2 className="title-text text-center text-lg font-semibold leading-8 text-white">
-                    Website/Application Development
-                </h2>
-
-                <p className="text-center text-sm italic font-bold leading-8 text-[var(--primary2)]">
-                    (Click the icons to learn more)
-                </p>
-
-                <div className="mx-auto mt-10 flex flex-wrap justify-evenly items-center gap-x-8 gap-y-10 max-w-lg sm:max-w-xl lg:mx-0 lg:max-w-none">
-                    {techStack.map((tech, index) => (
-                        <div key={index} className="flex flex-col items-center">
-                            <Image
-                                alt={tech.name}
-                                src={tech.src}
-                                width={100}
-                                height={100}
-                                className="object-contain cursor-pointer"
-                                onClick={() => handleModalOpen(index)} // Open the modal for the clicked image
-                            />
-
-                            {/* Conditionally render the modal for the clicked image */}
-                            {openModalIndex === index && (
-                                <Modal
-                                    title={tech.name}
-                                    content={`Would you like to learn more about ${tech.name}?`}
-                                    leftButton="Exit"
-                                    rightButton="Learn More"
-                                    onClose={handleModalClose} // Close the modal when either button is clicked
-                                    imagesrc={tech.src}
-                                    imagealt={tech.name}
-                                    href={tech.href}
-                                />
-                            )}
-                        </div>
-                    ))}
-                </div>
-            </div>
-
-            {/* //! Additional Technologies */}
-
-            <div className="mx-auto max-w-7xl px-6 lg:px-8 pt-24">
-                <h2 className="title-text text-center text-lg font-semibold leading-8 text-white pt-3">
-                    Backend Development & Data Analysis/Visualization
-                </h2>
-                <p className="text-center text-sm italic font-bold leading-8 text-[var(--primary2)]">
-                    (Click the icons to learn more)
-                </p>
-
-                <div className="mx-auto mt-10 flex flex-wrap justify-evenly items-center gap-x-8 gap-y-10 max-w-lg sm:max-w-xl lg:mx-0 lg:max-w-none">
-                    {additionalTech.map((tech, index) => (
-                        <div key={index} className="flex flex-col items-center">
-                            <Image
-                                alt={tech.name}
-                                src={tech.src}
-                                width={100}
-                                height={100}
-                                className="object-contain cursor-pointer"
-                                onClick={() => handleModalOpen(index)} // Open the modal for the clicked image
-                            />
-
-                            {/* Conditionally render the modal for the clicked image */}
-                            {openModalIndex === index && (
-                                <Modal
-                                    title={tech.name}
-                                    content={`Would you like to learn more about ${tech.name}?`}
-                                    leftButton="Exit"
-                                    rightButton="Learn More"
-                                    onClose={handleModalClose} // Close the modal when either button is clicked
-                                    imagesrc={tech.src}
-                                    imagealt={tech.name}
-                                    href={tech.href}
-                                />
-                            )}
-                        </div>
-                    ))}
-                </div>
-            </div>
+  return (
+    <section className="border-t border-canvas-border py-20 sm:py-28">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <div className="text-center">
+          <p className="eyebrow mb-3">Tech stack</p>
+          <h2 className="font-display text-2xl font-bold text-ink sm:text-3xl">Website &amp; Application Development</h2>
+          <p className="mt-2 text-sm text-ink-subtle">Click any icon to learn more</p>
         </div>
-    );
+        {renderGrid(techStack, "web")}
+
+        <div className="mt-20 text-center">
+          <h2 className="font-display text-2xl font-bold text-ink sm:text-3xl">Backend &amp; Data</h2>
+          <p className="mt-2 text-sm text-ink-subtle">Click any icon to learn more</p>
+        </div>
+        {renderGrid(additionalTech, "backend")}
+      </div>
+    </section>
+  );
 }

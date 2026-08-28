@@ -1,19 +1,16 @@
 export async function generateMetadata() {
-    return {
-        title: 'Experience | Hammontree Full-Stack Solutions LLC',
-        description: 'Take a deep dive into what makes Hammontree Full-Stack Solutions qualified to tackle your next project.',
-        keywords: 'Experience, resume, Hammontree, Web Development, Full-Stack, Solutions, Biography, Kaileb',
-        icons: {
-            icon: "/img/favicon.ico",
-          },
-    };
-    };
-    
-    export default function ExperienceLayout({ children }) {
-      return (
-        <>
-            {children}   
-        </>
-      );
-    };
-    
+  return {
+    title: 'Experience',
+    description: 'Professional experience, certifications, and tech stack behind Hammontree Full-Stack Solutions.',
+    alternates: { canonical: '/experience' },
+    openGraph: {
+      title: 'Experience | Hammontree Full-Stack Solutions',
+      description: 'Enterprise engineering background and full-stack expertise.',
+      url: '/experience',
+    },
+  };
+}
+
+export default function ExperienceLayout({ children }) {
+  return children;
+}

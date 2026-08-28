@@ -1,63 +1,41 @@
-import Link from "next/link";
+import Image from "next/image";
+import GradientButton from "@/app/ui/common/GradientButton/GradientButton.jsx";
+
+const principles = [
+  { title: "Passion", subtitle: "Without passion, there is no vision", body: "Passion is the spark that ignites purpose. It drives creativity, fuels ambition, and inspires action." },
+  { title: "Clarity", subtitle: "Without clarity, there is no direction", body: "Clarity transforms vision into actionable goals. It sharpens focus and illuminates priorities." },
+  { title: "Focus", subtitle: "Without focus, there is no achievement", body: "Focus is the discipline that turns intention into reality — eliminating distractions along the way." },
+];
 
 export default function ContentSection() {
-    return (
-        < div className="mt-32 overflow-hidden sm:mt-40" >
-            <div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
-                <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-100vw lg:flex-none lg:gap-y-8">
-                    <div className="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8 text-center">
-                        <h2 className="title-text text-4xl font-semibold tracking-tight text-[var(--primary2)] sm:text-5xl">
-                            Passion, Clarity, Focus
-                        </h2>
-                        {/* PASSION */}
-                        <p className="mt-6 text-xl/8 text-[var(--primary1)] title-text">
-                            Without Passion, There Is No Vision
-                        </p>
-                        <p className="mt-6 text-base/7 text-white">
-                            Passion is the spark that ignites purpose. It drives creativity, fuels ambition, and inspires action. Without passion, there is no vision, and without vision, the path forward remains unseen.
-                        </p>
-                        {/* CLARITY */}
-                        <p className="mt-6 text-xl/8 text-[var(--primary1)] title-text">
-                            Without Clarity, There Is No Direction
-                        </p>
-                        <p className="mt-6 text-base/7 text-white">
-                            Clarity transforms vision into actionable goals. It sharpens focus, illuminates priorities, and clears the path ahead. Without clarity, efforts scatter, and direction fades.
-                        </p>
-                        {/* FOCUS */}
-                        <p className="mt-6 text-xl/8 text-[var(--primary1)] title-text">
-                            Without Focus, There Is No Achievement
-                        </p>
-                        <p className="mt-6 text-base/7 text-white">
-                            Focus is the discipline that turns intention into reality. It channels energy, eliminates distractions, and ensures that every step forward brings you closer to success. Without focus, potential is left unrealized.
-                        </p>
-                        {/* SUCCESS */}
-                        <p className="mt-6 text-xl/8 text-[var(--primary1)] title-text">
-                            With Hammontree Full-Stack Solutions, Success Becomes Reality
-                        </p>
-                        <p className="mt-6 text-base/7 text-white">
-                            Success is not just an outcome—it is the culmination of passion, clarity, and focus. At Hammontree Full-Stack Solutions, we define success through your satisfaction. Your vision is our mission, and your achievement is our goal. Together, we turn ideas into reality and ensure your digital presence exceeds expectations.
-                            <br></br>
-                            <br></br>
-                            If you're ready to talk about your next step, then
-                            <span className=" mt-3">
-                                <Link className="text-md text-[var(--primary5)] title-text hover:text-[var(--primary4)]" href="/contact">
-                                    &nbsp;contact us&nbsp;
-                                </Link>
-                            </span>
-                            and we will get back to you soon for a consultation.
-                        </p>
-                    </div>
-                    <div className="flex flex-wrap items-start justify-end gap-6 sm:gap-8 lg:contents">
-                        <div className="w-0 flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-center">
-                            <img
-                                alt=""
-                                src="/img/bio/aboutPic1.jpg"
-                                className="aspect-[7/5] max-w-100vw rounded-2xl bg-gray-50 object-cover"
-                            />
-                        </div>
-                    </div>
+  return (
+    <section className="border-t border-canvas-border py-20 sm:py-28">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <div className="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+          <div>
+            <p className="eyebrow mb-3">Our philosophy</p>
+            <h2 className="font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">Passion, Clarity, Focus</h2>
+            <p className="mt-6 text-lg text-ink-muted">These three principles guide every project we take on. Your vision becomes our mission.</p>
+            <div className="mt-10 space-y-8">
+              {principles.map((p) => (
+                <div key={p.title} className="border-l-2 border-secondary/40 pl-6">
+                  <h3 className="font-display text-lg font-bold text-secondary">{p.title}</h3>
+                  <p className="mt-1 text-sm font-medium text-ink">{p.subtitle}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-ink-muted">{p.body}</p>
                 </div>
+              ))}
             </div>
-        </div >
-    )
+            <div className="mt-10">
+              <GradientButton href="/contact">Let&apos;s Talk</GradientButton>
+            </div>
+          </div>
+          <div className="mt-12 lg:mt-0">
+            <div className="card-surface overflow-hidden">
+              <Image alt="Kaileb Hammontree at work" src="/img/bio/aboutPic1.jpg" width={800} height={570} className="aspect-[7/5] w-full object-cover" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }

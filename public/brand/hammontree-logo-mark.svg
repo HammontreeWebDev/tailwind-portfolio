@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none" role="img" aria-label="Hammontree Full-Stack Solutions">
+  <rect x="6" y="8" width="28" height="5" rx="1" fill="#00F2FE"/>
+  <rect x="9" y="17" width="22" height="5" rx="1" fill="#30B8BF"/>
+  <rect x="12" y="26" width="16" height="5" rx="1" fill="#407C80"/>
+  <line x1="6" y1="36" x2="34" y2="36" stroke="#AA6639" stroke-width="1.5" stroke-linecap="round"/>
+</svg>

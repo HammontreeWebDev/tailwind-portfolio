@@ -1,88 +1,78 @@
+const TO_BE_WITH_REPO = 'https://github.com/HammontreeWebDev/to_be_with_counseling';
+
 export default function TimelineSection() {
   const timeline = [
     {
       name: 'Cyber Defense Certificate Program (UCF)',
-      description:
-        'Graduated with knowledge in topics including but not limited to: computer networking, network security, system administration, and ethical hacking.',
+      description: 'Graduated with expertise in computer networking, network security, system administration, and ethical hacking.',
       date: 'Dec 2021',
       dateTime: '2021-12',
     },
     {
       name: 'Full-Stack Coding Boot Camp (UCF)',
-      description:
-        'Graduated with finely tuned technical skills needed in order to be able to design and program modern day websites and applications, from front to back. ',
+      description: 'Graduated with the technical skills to design and build modern websites and applications — front to back.',
       date: 'Dec 2022',
       dateTime: '2022-12',
     },
     {
-      name: 'Founded Company',
-      description:
-        'Hammontree Full-Stack Solutions was founded, so that Kaileb could share his passion with you.',
+      name: 'Founded Hammontree Full-Stack Solutions',
+      description: 'Launched the company to bring premium web and app development to clients who want more than a template.',
       date: 'Jun 2023',
       dateTime: '2023-06',
     },
     {
       name: 'BroFit Personal Training',
-      description:
-        `A website for BroFit Personal Training was launched. Check out everything Reese is offering by clicking the link below.`,
-      link: {
-        text: "BroFit Personal Training",
-        url: "https://www.reesewilder.com/",
-      },
+      description: 'Designed and launched a custom website for BroFit Personal Training — a bold, conversion-focused brand presence.',
+      link: { text: 'BroFit Personal Training →', url: 'https://www.reesewilder.com/' },
       date: 'Jun 2023',
       dateTime: '2023-06',
     },
     {
       name: 'Jesse Ryder Brown Foundation',
-      description:
-        `A website for the Jesse Ryder Brown Foundation, "J-Boo Customs", was launched. This project honored the memory of 11 year old Jesse Brown and allowed users to connect with the organization responsible for spreading awareness of Strep A. This project is unavailable to view as of January 2025.`,
-      link: {
-        text: "J-Boo Customs [No longer available]",
-        url: "",
-      },
+      description: 'Built "J-Boo Customs" for the Jesse Ryder Brown Foundation. Project unavailable as of January 2025.',
+      link: { text: 'J-Boo Customs [No longer available]', url: '' },
       date: 'Sep 2023',
       dateTime: '2023-09',
     },
     {
       name: 'To Be With Counseling',
-      description:
-        `A website for To Be With Counseling was launched. Karah, from To Be With Counseling, is a Registered Mental Health Counselor Intern in the State of Florida who is passionate about walking alongside her clients in their search for long-lasting freedom from eating disorders, body image issues, and body shame. In assisting her clients uncover the root issues that have contributed to the development of an unhealthy relationship with food and body, she has witnessed the unequivocal transformation that occurs when one is able to come back home to themselves, utilizing compassion, kindness, and curiosity, in this needed restoration process. Click the link below to find out more!`,
-      link: {
-        text: "To Be With Counseling",
-        url: "https://www.tobewithcounseling.com/",
-      },
+      description: 'Crafted a warm, professional website for To Be With Counseling. The live site is no longer active — view the source on GitHub.',
+      link: { text: 'View on GitHub →', url: TO_BE_WITH_REPO },
       date: 'Jan 2025',
       dateTime: '2025-01',
     },
   ];
-  
+
   return (
-    <div className="mx-auto -mt-8 max-w-7xl px-6 lg:px-8">
-      <div className="mx-auto grid max-w-2xl grid-cols-1 gap-8 overflow-hidden lg:mx-0 lg:max-w-none lg:grid-cols-4">
-        {timeline.map((item) => (
-          <div key={item.name}>
-            <time dateTime={item.dateTime} className="flex items-center text-sm/6 font-semibold text-[var(--primary2)]">
-              <svg viewBox="0 0 4 4" aria-hidden="true" className="mr-4 size-1 flex-none">
-                <circle r={2} cx={2} cy={2} fill="currentColor" />
-              </svg>
-              {item.date}
-              <div
-                aria-hidden="true"
-                className="absolute -ml-2 h-px w-screen -translate-x-full bg-gray-900/10 sm:-ml-4 lg:static lg:-mr-6 lg:ml-8 lg:w-auto lg:flex-auto lg:translate-x-0"
-              />
-            </time>
-            <p className="mt-6 text-lg/8 font-semibold tracking-tight text-[var(--primary1)] title-text">{item.name}</p>
-            <p className="mt-1 text-base/7 text-white">{item.description}</p>
-            {item.link && (
-            <p className=" mt-3">
-              <a className="text-md text-[var(--primary5)] title-text hover:text-[var(--primary4)]" href={item.link.url} target="_blank" rel="noopener noreferrer">
-                {item.link.text}
-              </a>
-            </p>
-            )}
-          </div>
-        ))}
+    <section className="border-t border-canvas-border py-20 sm:py-28" aria-labelledby="timeline-heading">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <div className="mx-auto max-w-2xl text-center">
+          <p className="eyebrow mb-3">The journey</p>
+          <h2 id="timeline-heading" className="font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">Milestones &amp; launches</h2>
+        </div>
+        <div className="mx-auto mt-14 grid max-w-2xl grid-cols-1 gap-6 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+          {timeline.map((item) => (
+            <div key={item.name} className="card-surface p-6">
+              <time dateTime={item.dateTime} className="flex items-center gap-2 text-sm font-semibold text-secondary">
+                <span className="inline-flex h-2 w-2 rounded-full bg-secondary" aria-hidden="true" />
+                {item.date}
+              </time>
+              <p className="mt-4 font-display text-lg font-semibold text-ink">{item.name}</p>
+              <p className="mt-2 text-sm leading-relaxed text-ink-muted">{item.description}</p>
+              {item.link && item.link.url && (
+                <a
+                  className="mt-4 inline-block text-sm font-medium text-accent transition-colors hover:text-accent-hover"
+                  href={item.link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {item.link.text}
+                </a>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
-  )
+    </section>
+  );
 }
