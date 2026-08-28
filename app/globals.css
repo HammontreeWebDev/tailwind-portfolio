@@ -188,6 +188,12 @@ body {
   @apply outline outline-2 outline-offset-2 outline-accent;
 }
 
+.btn-accent:disabled {
+  @apply cursor-not-allowed opacity-60;
+  transform: none;
+  box-shadow: none;
+}
+
 /* Secondary ghost button (not conversion) */
 .btn-ghost {
   @apply inline-flex items-center gap-2 rounded-lg border border-canvas-border bg-canvas-elevated px-6 py-3 text-sm font-semibold text-ink-muted transition-all;
